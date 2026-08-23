@@ -55,6 +55,31 @@ Polyglot Support: MetaSSR needs to support more programming languages via `metas
 
 ## 5. Merged Pull Requests
 
+- [bump(deps): metacall 0.5.10](https://github.com/metacall/metassr/pull/158)
+- [Example: random users app](https://github.com/metacall/metassr/pull/160)
+- [refactor `metassr dev`: make it build nativelty without relying on `metassr build`](https://github.com/metacall/metassr/pull/161)
+- [fix js template: running render functions `React is not defined`](https://github.com/metacall/metassr/pull/163)
+- [feat: try incrementing server port if 8080 (or the chosen port via cli) instead of failing](https://github.com/metacall/metassr/pull/164)
+- [feat: only increment port when in dev mode](https://github.com/metacall/metassr/pull/166)
+- [feat: support PUT and DELETE HTTP Methods](https://github.com/metacall/metassr/pull/167)
+- [Refactor: rebuilder module](https://github.com/metacall/metassr/pull/168)
+- [Remove rspack mentions](https://github.com/metacall/metassr/pull/169)
+- [feat: add standalone performance benchmark suite](https://github.com/metacall/metassr/pull/171)
+- [Introduce Polyglot langauge api handlers to MetaSSR](https://github.com/metacall/metassr/pull/172)
+- [Example: add python pygreet API Route](https://github.com/metacall/metassr/pull/173)
+- [Tests(`metassr-api-handler` tests): make them async tokio tests](https://github.com/metacall/metassr/pull/175)
+- [fix(bench-ci): ensure benchmark artifacts are uploaded](https://github.com/metacall/metassr/pull/176)
+- [feat: add baseline comparison to benchmark CI](https://github.com/metacall/metassr/pull/178)
+- [Introduce new crate: metassr-config](https://github.com/metacall/metassr/pull/179)
+- [feat (metassr-config): add config loading logic and testings](https://github.com/metacall/metassr/pull/180)
+- [Feat(metassr-config): add server port under dev settings](https://github.com/metacall/metassr/pull/181)
+- [Feat(metassr-cli): rename `metassr run` command to `metassr start`](https://github.com/metacall/metassr/pull/182)
+- [Examples: init sales-dashboard example](https://github.com/metacall/metassr/pull/183)
+- [chore: update all tsconfig and jsconfig from es2016 to es2018](https://github.com/metacall/metassr/pull/184)
+- [feat(cli): version argument with cool ASCI art](https://github.com/metacall/metassr/pull/185)
+- [feat(bench-ci): persist benchmark results and compare against latest master](https://github.com/metacall/metassr/pull/186)
+- [refactor: unify BuildingType enum into metassr-build](https://github.com/metacall/metassr/pull/187)
+
 ## 6. Challenges & Lessons Learned
 
 ---
