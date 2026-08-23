@@ -16,6 +16,33 @@
 
 ---
 
+## TL;DR
+
+MetaSSR is like Next.js, except its API routes can be written in more than one language, Python, JavaScript, and soon others, all sharing the same server, same memory, same request. Under the hood it's a Rust/Axum server powered by **MetaCall**, and it benchmarks **31x faster than Next.js** under load.
+I spent this summer building MetaSSR under Google Summer of Code 2026 program, a crazy experiment I believe has never been touched before in the "polyglot programming" area. Made MetaSSR more reliable and production-ready, and built the project's first real-world example => Sales Dashboard that mixes a Python/pandas backend with a JS endpoint ***on one server***.
+
+```javascript
+// api/hello.js
+function GET(reqString) {
+  return JSON.stringify({
+    status: 200,
+    body: { message: "Hello from JavaScript!" }
+  });
+}
+```
+
+```python
+# api/hello.py
+import json
+def GET(req_string):
+    return json.dumps({
+        "status": 200,
+        "body": {"message": "Hello from Python!"}
+    })
+```
+
+Drop either file in `src/app/api/` and it's live at `/api/hello`. No microservices, no separate backend-per-language deployment — just one Rust binary doing the routing and MetaCall bridging the runtimes in real time.
+
 ## 1. Project Goals
 
 MetaSSR already delivers fast SSR and does well on the benchmarks, which is promising. But the dev mode, tests, and error handling still need hardening to be production‑ready. This project aims to make MetaSSR more mature and production-ready, focusing on improving the API handler (the core idea of MetaSSR, Polyglot programming via MetaCall), stabilizing and adding feature to the dev mode, expanding tests, and improving CI/reporting and documentation. If needed, the work will include changes to the MetaCall Rust port to support MetaSSR reliability & maintainability.
@@ -39,15 +66,17 @@ I also posted a couple of devlogs. I planned to post a lot more to document the 
 
 ## 3. Current State
 
-MetaSSR now has basic polyglot support
+- MetaSSR now has basic polyglot support where you can create API routes using JavaScript and Python.
+- proven it can connect to a SQLite DB and fetches data (random-users test)
+-
 
 ## 4. What's Left
 
 Middleware: We actually didn't find any usecase for it yet, decided that when we actually need security stuff done by the middleware we'll implement it. there is an RFC.
 
-dockerize
+Dockerization: Needs docker in examples to make it reproducable. Usage of Docker for CI/CD or even development is in a good state already.
 
-Serialization: we use `serde` crate for Serialization, while there is a metacall-native option `metacall_seralize` function in MetaCall's C code. Integrating this in MetaSSR will potentially improve its performance.
+Serialization: We use `serde` crate for Serialization, while there is a metacall-native option `metacall_seralize` function in MetaCall's C code. Integrating this in MetaSSR will potentially improve its performance.
 
 lockfree
 
