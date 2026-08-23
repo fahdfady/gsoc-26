@@ -30,6 +30,8 @@ Eventually letting me add a new example "Sales Dashboard" that lets us use numpy
 
 Added config for MetaSSR `metassr.toml` to include persistent configuration for your projects instead of just CLI.
 
+Moved the benchmarks from <https://github.com/metacall/metassr-benchmarks/> to the current repo. Letting us run benchmarks on each PR, giving us the insight if something is good/wrong and weither we should merge or not. Also running benchmarks on each master commit so we can track the overall state of the project and where it improved or broke.
+
 I also posted a couple of devlogs. I planned to post a lot more to document the journey but i think that's okay.
 
 - <https://fahdashour.com/devlog/001-metassr-examples/>
@@ -37,15 +39,19 @@ I also posted a couple of devlogs. I planned to post a lot more to document the 
 
 ## 3. Current State
 
+MetaSSR now has basic polyglot support
+
 ## 4. What's Left
 
-Middleware. We actually didn't find any usecase for it yet, decided that when we actually need security stuff done by the middleware we'll implement it. there is an RFC.
+Middleware: We actually didn't find any usecase for it yet, decided that when we actually need security stuff done by the middleware we'll implement it. there is an RFC.
 
 dockerize
 
-serialization
+Serialization: we use `serde` crate for Serialization, while there is a metacall-native option `metacall_seralize` function in MetaCall's C code. Integrating this in MetaSSR will potentially improve its performance.
 
 lockfree
+
+Polyglot Support: MetaSSR needs to support more programming languages via `metassr-api-handler`. But most importantly we should have interesting use-cases and examples before rushing into implementing another language support (which is pretty easy actually)
 
 ## 5. Merged Pull Requests
 
