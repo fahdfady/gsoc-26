@@ -113,6 +113,4 @@ Benchmarks: we need a static site where we can compare master commits' performan
 - [feat(bench-ci): persist benchmark results and compare against latest master](https://github.com/metacall/metassr/pull/186)
 - [refactor: unify BuildingType enum into metassr-build](https://github.com/metacall/metassr/pull/187)
 
-## 6. Challenges & Lessons Learned
-
 ---
