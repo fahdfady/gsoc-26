@@ -79,7 +79,7 @@ Dockerization: Needs docker in examples to make it reproducable. Usage of Docker
 
 Serialization: We use `serde` crate for Serialization, while there is a metacall-native option `metacall_seralize` function in MetaCall's C code. Integrating this in MetaSSR will potentially improve its performance.
 
-lockfree
+Lockfree: we use MetaCall `Handle`s (which is a raw C pointer) inside the `metassr-api-handler` crate to keep track of each endpoint's code. We're using `lockfree` crate, but it's deprecated. We would like to remove any dependency at all and use `Handle` as a raw pointer unsafely. Documented in [issue #159](https://github.com/metacall/metassr/issues/159)
 
 Polyglot Support: MetaSSR needs to support more programming languages via `metassr-api-handler`. But most importantly we should have interesting use-cases and examples before rushing into implementing another language support (which is pretty easy actually)
 
