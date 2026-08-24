@@ -68,8 +68,9 @@ I also posted a couple of devlogs. I planned to post a lot more to document the 
 ## 3. Current State
 
 - MetaSSR now has basic polyglot support where you can create API routes using JavaScript and Python.
+- Have a real example using python and javascript
 - proven it can connect to a SQLite DB and fetches data (random-users test)
--
+- benchmarks are in a good status, running on each PR
 
 ## 4. What's Left
 
@@ -82,6 +83,8 @@ Serialization: We use `serde` crate for Serialization, while there is a metacall
 Lockfree: we use MetaCall `Handle`s (which is a raw C pointer) inside the `metassr-api-handler` crate to keep track of each endpoint's code. We're using `lockfree` crate, but it's deprecated. We would like to remove any dependency at all and use `Handle` as a raw pointer unsafely. Documented in [issue #159](https://github.com/metacall/metassr/issues/159)
 
 Polyglot Support: MetaSSR needs to support more programming languages via `metassr-api-handler`. But most importantly we should have interesting use-cases and examples before rushing into implementing another language support (which is pretty easy actually)
+
+Benchmarks: we need a static site where we can compare master commits' performance in a graph like metacall benchmarks: <https://metacall.github.io/core-benchmarks/ubuntu-latest/>
 
 ## 5. Merged Pull Requests
 
