@@ -19,6 +19,7 @@
 ## TL;DR
 
 MetaSSR is like Next.js, except its API routes can be written in more than one language, Python, JavaScript, and soon others, all sharing the same server, same memory, same request. Under the hood it's a Rust/Axum server powered by **MetaCall**, and it benchmarks **31x faster than Next.js** under load.
+
 I spent this summer building MetaSSR under Google Summer of Code 2026 program, a crazy experiment I believe has never been touched before in the "polyglot programming" area. Made MetaSSR more reliable and production-ready, and built the project's first real-world example => Sales Dashboard that mixes a Python/pandas backend with a JS endpoint ***on one server***.
 
 ```javascript
