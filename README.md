@@ -10,7 +10,7 @@
 
 **Project size:** Large (350 hours)
 
-**Synopsis:**
+**Synopsis:** [5. MetaCall SSR (Server-Side Rendering) Server](https://github.com/metacall/gsoc-2026#5-metacall-ssr-server-side-rendering-server)
 
 **Contact:** <fahd.fady212@gmail.com> · [LinkedIn](https://linkedin.com/in/fahdashour)
 
